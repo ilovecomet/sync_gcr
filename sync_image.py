@@ -18,6 +18,7 @@ def pull_image():
     for name in name_list:
         if 'sha256' in name:
             print(name)
+            continue
             sha256_name = name.split("@")
             new_name = sha256_name[0].split("/")[-1]
             tag = sha256_name[-1].split(":")[-1][0:6]
@@ -32,7 +33,7 @@ def pull_image():
             cmd = "docker tag {0}   {1}".format(name, new_name)
             subprocess.call("docker pull {}".format(name), shell=True)
             subprocess.run(["docker", "tag", name, new_name])
-            subprocess.call("docker login -u kenwood -p qwer1234qwer", shell=True)
+            subprocess.call("docker login -u wxzhang -p qwer1234qwer", shell=True)
             subprocess.call("docker push {}".format(new_name), shell=True)
         
 if __name__ == "__main__":
