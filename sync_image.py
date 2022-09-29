@@ -17,8 +17,6 @@ def pull_image():
     name_list= get_filename()
     for name in name_list:
         if 'sha256' in name:
-            print(name)
-            continue
             sha256_name = name.split("@")
             new_name = sha256_name[0].split("/")[-1]
             tag = sha256_name[-1].split(":")[-1][0:6]
