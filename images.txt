@@ -1,1 +1,1 @@
-gcr.io/kfserving/kfserving-controller:v0.5.1
+gcr.io/ml-pipeline/argoexec:v2.12.9-license-compliance
